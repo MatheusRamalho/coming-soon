@@ -5,13 +5,13 @@ import { CountdownSeparator } from './CountdownSeparator'
 export const Countdown = () => {
     return (
         <CountdownRoot>
-            <CountdownItem title="Dias" number={20} />
+            <CountdownItem title="Dias" number={0} />
             <CountdownSeparator />
-            <CountdownItem title="Horas" number={28} />
+            <CountdownItem title="Horas" number={0} />
             <CountdownSeparator />
-            <CountdownItem title="Minutos" number={45} />
+            <CountdownItem title="Minutos" number={0} />
             <CountdownSeparator />
-            <CountdownItem title="Segundos" number={39} />
+            <CountdownItem title="Segundos" number={0} />
         </CountdownRoot>
     )
 }
