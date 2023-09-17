@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={robotoMono.className}>
-                <main className="w-screen h-screen bg-gray-900 flex items-center justify-center"> {children} </main>
+                <main className="w-full min-h-screen bg-gray-900 flex items-center justify-center"> {children} </main>
             </body>
         </html>
     )

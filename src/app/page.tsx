@@ -1,5 +1,5 @@
 import { Countdown } from '@/components/Countdown'
-import { Header } from '@/components/Header'
+// import { Header } from '@/components/Header'
 
 export default function Home() {
     return (
@@ -7,12 +7,12 @@ export default function Home() {
             <h6 hidden> Home, em breve... </h6>
 
             <div className="flex-1 flex flex-col items-center justify-center gap-28">
-                <Header
+                {/* <Header
                     title="Casamento"
                     description="Acompanhe nossa contagem regressiva para o grande dia..."
                     person="Vívian"
                     person2="Matheus"
-                />
+                /> */}
 
                 <Countdown />
             </div>
