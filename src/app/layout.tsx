@@ -1,10 +1,9 @@
-import '@/styles/globals.css'
-
 import type { Metadata } from 'next'
-// eslint-disable-next-line camelcase
-import { Roboto_Mono } from 'next/font/google'
+import { Roboto_Mono as RobotoMono } from 'next/font/google'
 
-const robotoMono = Roboto_Mono({
+import '../styles/globals.css'
+
+const robotoMono = RobotoMono({
     subsets: ['latin'],
     weight: ['400', '700'],
 })
@@ -14,11 +13,17 @@ export const metadata: Metadata = {
     description: 'Contador de lancamento',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+    children,
+}: Readonly<{
+    children: React.ReactNode
+}>) {
     return (
         <html lang="en">
             <body className={robotoMono.className}>
-                <main className="w-full min-h-screen bg-gray-900 flex items-center justify-center"> {children} </main>
+                <main className="w-full min-h-screen bg-gray-900 flex items-center justify-center">
+                    {children}
+                </main>
             </body>
         </html>
     )
