@@ -1,26 +1,18 @@
 interface HeaderProps {
-    title: string
+    subtitle: string
     description: string
-    person: string
-    person2: string
+    title: string
 }
 
-export const Header = ({
-    title,
-    description,
-    person,
-    person2,
-}: HeaderProps) => {
+export function Header({ subtitle, title, description }: HeaderProps) {
     return (
         <div className="flex flex-col items-center justify-center gap-8 text-center">
             <h2 className="text-gray-600 text-4xl text-center font-bold uppercase">
-                {title}
+                {subtitle}
             </h2>
 
             <h1 className="text-white text-5xl lg:text-7xl text-center font-bold">
-                {person}
-                <span className="text-gray-600"> & </span>
-                {person2}
+                {title}
             </h1>
 
             <p className="text-gray-600 text-base"> {description} </p>
