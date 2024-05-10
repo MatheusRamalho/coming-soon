@@ -1,7 +1,8 @@
 export function CountdownSeparator() {
     return (
-        <span className="w-full sm:w-4 md:w-16 sm:py-8 sm:pb-24 rotate-90 sm:rotate-180 overflow-hidden flex items-center justify-center text-green-500">
-            :
-        </span>
+        <div className="flex flex-row md:flex-col items-center justify-center gap-4 w-14 md:w-8 h-5 md:h-24 xl:h-40 md:mt-8 xl:mt-12">
+            <div className="size-3 md:size-5 rounded-full bg-green-500" />
+            <div className="size-3 md:size-5 rounded-full bg-green-500" />
+        </div>
     )
 }

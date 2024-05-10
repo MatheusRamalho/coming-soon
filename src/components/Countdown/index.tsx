@@ -1,33 +1,69 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+
 import { CountdownItem } from './CountdownItem'
+import { CountdownMessage } from './CountdownMessage'
 import { CountdownRoot } from './CountdownRoot'
 import { CountdownSeparator } from './CountdownSeparator'
 
 export function Countdown() {
-    const currentDate = new Date().getTime() + 24 * 3600 * 1000 + 5000
-    const now = new Date().getTime()
-    console.log(currentDate)
-    console.log(now)
+    const [days, setDays] = useState<number>(0)
+    const [hours, setHours] = useState<number>(0)
+    const [minutes, setMinutes] = useState<number>(0)
+    const [seconds, setSeconds] = useState<number>(0)
+    const [finish, setFinish] = useState<boolean>(false)
 
-    // const t = this.deadline - now
-    // const dd = Math.floor(t / (1000 * 60 * 60 * 24))
-    // const hh = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    // const mm = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60))
-    // const ss = Math.floor((t % (1000 * 60)) / 1000)
+    const finalDate = new Date('May 12, 2024 00:00:00').getTime()
 
-    // const days = dd < 10 ? '0' + dd : dd
-    // const hours = hh < 10 ? '0' + hh : hh
-    // const minutes = mm < 10 ? '0' + mm : mm
-    // const seconds = ss < 10 ? '0' + ss : ss
+    function countdownUpdate() {
+        const currentDate = new Date().getTime()
+        const dateDifference = finalDate - currentDate
+
+        const dd = Math.floor(dateDifference / (1000 * 60 * 60 * 24))
+        const hh = Math.floor(
+            (dateDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        )
+        const mm = Math.floor((dateDifference % (1000 * 60 * 60)) / (1000 * 60))
+        const ss = Math.floor((dateDifference % (1000 * 60)) / 1000)
+
+        setDays(dd)
+        setHours(hh)
+        setMinutes(mm)
+        setSeconds(ss)
+
+        if (dateDifference < 0) {
+            setFinish(true)
+        }
+    }
+
+    useEffect(() => {
+        const interval = setInterval(countdownUpdate, 1000)
+
+        return () => {
+            clearInterval(interval)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <CountdownRoot>
-            <CountdownItem title="Dias" number={0} />
-            <CountdownSeparator />
-            <CountdownItem title="Horas" number={0} />
-            <CountdownSeparator />
-            <CountdownItem title="Minutos" number={0} />
-            <CountdownSeparator />
-            <CountdownItem title="Segundos" number={0} />
+            {finish ? (
+                <CountdownMessage message="A contagem terminou!!!" />
+            ) : (
+                <>
+                    <CountdownItem title="Dias" number={days} />
+                    <CountdownSeparator />
+
+                    <CountdownItem title="Horas" number={hours} />
+                    <CountdownSeparator />
+
+                    <CountdownItem title="Minutos" number={minutes} />
+                    <CountdownSeparator />
+
+                    <CountdownItem title="Segundos" number={seconds} />
+                </>
+            )}
         </CountdownRoot>
     )
 }

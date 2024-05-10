@@ -1,18 +1,13 @@
-import { Countdown } from '@/components/Countdown'
 import { Header } from '@/components/Header'
+import { Countdown } from '@/components/Countdown'
 
 export default function Home() {
     return (
-        <section className="container mx-auto h-[calc(100vh-10rem)] rounded-lg p-10 flex flex-col">
+        <section className="w-full h-full p-10">
             <h6 hidden> Home, em breve... </h6>
 
-            <div className="flex-1 flex flex-col items-center justify-center gap-28">
-                <Header
-                    subtitle="Contagem regressiva"
-                    title="O projeto"
-                    description="Alguma descrição bem aqui"
-                />
-
+            <div className="w-full h-full flex flex-col items-center justify-center gap-12 overflow-hidden">
+                <Header tag="Contagem regressiva" title="Dia das mães" />
                 <Countdown />
             </div>
         </section>

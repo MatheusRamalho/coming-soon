@@ -1,21 +1,18 @@
 interface HeaderProps {
-    subtitle: string
-    description: string
     title: string
+    tag: string
 }
 
-export function Header({ subtitle, title, description }: HeaderProps) {
+export function Header({ tag, title }: HeaderProps) {
     return (
-        <div className="flex flex-col items-center justify-center gap-8 text-center">
-            <h2 className="text-gray-600 text-4xl text-center font-bold uppercase">
-                {subtitle}
+        <div className="flex flex-col items-center justify-center gap-2 text-center">
+            <h2 className="text-gray-600 text-lg text-center font-bold uppercase">
+                {tag}
             </h2>
 
-            <h1 className="text-white text-5xl lg:text-7xl text-center font-bold">
+            <h1 className="text-gray-300 text-4xl text-center font-bold uppercase">
                 {title}
             </h1>
-
-            <p className="text-gray-600 text-base"> {description} </p>
         </div>
     )
 }

@@ -10,7 +10,7 @@ const robotoMono = RobotoMono({
 
 export const metadata: Metadata = {
     title: 'Coming soon',
-    description: 'Contador de lancamento',
+    description: 'Contador de lançamento',
 }
 
 export default function RootLayout({
