@@ -5,7 +5,10 @@ interface HeaderProps {
 
 export function Header({ tag, title }: HeaderProps) {
     return (
-        <div className="flex flex-col items-center justify-center gap-2 text-center">
+        <div
+            data-testid="header"
+            className="flex flex-col items-center justify-center gap-2 text-center"
+        >
             <h2 className="text-gray-600 text-lg text-center font-bold uppercase">
                 {tag}
             </h2>

@@ -14,7 +14,7 @@ export function Countdown() {
     const [seconds, setSeconds] = useState<number>(0)
     const [finish, setFinish] = useState<boolean>(false)
 
-    const finalDate = new Date('May 12, 2024 00:00:00').getTime()
+    const finalDate = new Date('Jun 06, 2024 00:00:00').getTime()
 
     function countdownUpdate() {
         const currentDate = new Date().getTime()
@@ -47,23 +47,25 @@ export function Countdown() {
     }, [])
 
     return (
-        <CountdownRoot>
-            {finish ? (
-                <CountdownMessage message="A contagem terminou!!!" />
-            ) : (
-                <>
-                    <CountdownItem title="Dias" number={days} />
-                    <CountdownSeparator />
+        <div data-testid="countdown">
+            <CountdownRoot>
+                {finish ? (
+                    <CountdownMessage message="A contagem terminou!!!" />
+                ) : (
+                    <>
+                        <CountdownItem title="Dias" number={days} />
+                        <CountdownSeparator />
 
-                    <CountdownItem title="Horas" number={hours} />
-                    <CountdownSeparator />
+                        <CountdownItem title="Horas" number={hours} />
+                        <CountdownSeparator />
 
-                    <CountdownItem title="Minutos" number={minutes} />
-                    <CountdownSeparator />
+                        <CountdownItem title="Minutos" number={minutes} />
+                        <CountdownSeparator />
 
-                    <CountdownItem title="Segundos" number={seconds} />
-                </>
-            )}
-        </CountdownRoot>
+                        <CountdownItem title="Segundos" number={seconds} />
+                    </>
+                )}
+            </CountdownRoot>
+        </div>
     )
 }
