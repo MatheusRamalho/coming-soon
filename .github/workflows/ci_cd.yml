@@ -41,17 +41,17 @@ jobs:
           echo "Running installing dependencies..."
           npm install
 
-      - name: Lint
+      - name: Run Lint
         run: |
           echo "Running linting tests..."
           npm run lint
 
-      - name: Tests
+      - name: Run Tests
         run: |
           echo "Running jest tests..."
           npm run test
 
-      - name: Storybook
+      - name: Run Storybook
         run: |
           echo "Running storyboook..."
           npm run build-storybook
