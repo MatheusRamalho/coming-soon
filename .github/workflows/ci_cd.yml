@@ -54,7 +54,7 @@ jobs:
           echo "Running storyboook..."
           npm run build-storybook
 
-  CD-PRODUCTION:
+  CD:
     name: Continuous Delivery Production
     runs-on: ubuntu-latest
 
