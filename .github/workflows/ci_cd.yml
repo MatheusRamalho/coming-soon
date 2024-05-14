@@ -48,8 +48,8 @@ jobs:
 
       - name: Tests
         run: |
-        echo "Running jest tests..."
-        npm run test
+          echo "Running jest tests..."
+          npm run test
 
       - name: Storybook
         run: |
