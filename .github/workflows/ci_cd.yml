@@ -28,13 +28,13 @@ jobs:
           node-version: 20
 
       - name: Cache node
-          uses: actions/cache@v4
-          id: npm-cache
-          with:
-            path: node_modules
-            key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-            restore-keys: |
-              ${{ runner.os }}-npm-
+        uses: actions/cache@v4
+        id: npm-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - name: Install dependencies
         run: |
@@ -47,9 +47,9 @@ jobs:
           npm run lint
 
       - name: Tests
-         run: |
-          echo "Running jest tests..."
-          npm run test
+        run: |
+        echo "Running jest tests..."
+        npm run test
 
       - name: Storybook
         run: |
