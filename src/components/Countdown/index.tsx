@@ -14,7 +14,7 @@ export function Countdown() {
     const [seconds, setSeconds] = useState<number>(0)
     const [finish, setFinish] = useState<boolean>(false)
 
-    const finalDate = new Date('Jun 06, 2024 00:00:00').getTime()
+    const finalDate = new Date('Jun 07, 2024 07:00:00').getTime()
 
     function countdownUpdate() {
         const currentDate = new Date().getTime()
