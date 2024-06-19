@@ -7,7 +7,7 @@ export default function Home() {
             <h6 hidden> Home, em breve... </h6>
 
             <div className="w-full h-full flex flex-col items-center justify-center gap-12 overflow-hidden">
-                <Header tag="Só nós" title="lua de mel" />
+                <Header tag="Sobtitulo" title="Título" />
                 <Countdown />
             </div>
         </section>

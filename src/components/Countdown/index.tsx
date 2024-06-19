@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 
 import { CountdownItem } from './CountdownItem'
-import { CountdownMessage } from './CountdownMessage'
 import { CountdownRoot } from './CountdownRoot'
 import { CountdownSeparator } from './CountdownSeparator'
 
@@ -14,7 +13,7 @@ export function Countdown() {
     const [seconds, setSeconds] = useState<number>(0)
     const [finish, setFinish] = useState<boolean>(false)
 
-    const finalDate = new Date('Jun 07, 2024 07:00:00').getTime()
+    const finalDate = new Date('Jun 30, 2024 19:00:00').getTime()
 
     function countdownUpdate() {
         const currentDate = new Date().getTime()
@@ -49,22 +48,16 @@ export function Countdown() {
     return (
         <div data-testid="countdown">
             <CountdownRoot>
-                {finish ? (
-                    <CountdownMessage message="A contagem terminou!!!" />
-                ) : (
-                    <>
-                        <CountdownItem title="Dias" number={days} />
-                        <CountdownSeparator />
+                <CountdownItem title="Dias" number={finish ? 0 : days} />
+                <CountdownSeparator />
 
-                        <CountdownItem title="Horas" number={hours} />
-                        <CountdownSeparator />
+                <CountdownItem title="Horas" number={finish ? 0 : hours} />
+                <CountdownSeparator />
 
-                        <CountdownItem title="Minutos" number={minutes} />
-                        <CountdownSeparator />
+                <CountdownItem title="Minutos" number={finish ? 0 : minutes} />
+                <CountdownSeparator />
 
-                        <CountdownItem title="Segundos" number={seconds} />
-                    </>
-                )}
+                <CountdownItem title="Segundos" number={finish ? 0 : seconds} />
             </CountdownRoot>
         </div>
     )
